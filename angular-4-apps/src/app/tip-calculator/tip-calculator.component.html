@@ -1,44 +1,25 @@
-<div class="d-flex justify-content-center align-items-center vh-100 text-center">
+<br>
+<h1 class="text-center">Tip Calculator</h1>
+<div class="container">
     <form>
-        
-        <h3>Tip Calculator</h3>
-        <div class="col-auto">
-            <label class="sr-only" for="inlineFormInputGroup">Username</label>
-            <div class="input-group mb-2">
-            <div class="input-group-prepend">
-                <div class="input-group-text">$</div>
-            </div>
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Total Bill">
-            </div>
-        </div>
-
         <div class="form-group">
-        <label for="formControlRange">Tip:</label>
-        <input type="range" class="form-control-range" id="formControlRange">
+            <label for="billAmount">Bill Amount:</label>
+            <input type="number" class="form-control" id="billAmount" [(ngModel)]="billAmount" (input)="calculateTip()" min="0" name="billAmount">
+        </div>
+        <div class="form-group">
+            <label for="formControlRange">Tip: {{tipPercentage}}%</label>
+            <input type="range" min="0" max="100" class="form-control-range" id="formControlRange" [(ngModel)]="tipPercentage" (input)="calculateTip()" name="tipPercentage" style="width: 100%;">
         </div>
 
         <hr>
-        <h6> Results </h6>
-
-        <div class="col-auto">
-            <label class="sr-only" for="inlineFormInputGroup">Username</label>
-            <div class="input-group mb-2">
-            <div class="input-group-prepend">
-                <div class="input-group-text">Tip Amount</div>
-            </div>
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="0.00" disabled>
-            </div>
+        <h5 style="text-align: center;"> Results </h5>
+        <div class="form-group">
+            <label for="tipAmount">Tip Amount:</label>
+            <input type="text" class="form-control" id="tipAmount" [value]="tipAmount | currency" disabled name="tipAmount">
         </div>
-
-        <div class="col-auto">
-            <label class="sr-only" for="inlineFormInputGroup">Username</label>
-            <div class="input-group mb-2">
-            <div class="input-group-prepend">
-                <div class="input-group-text">Total Bill with Tip</div>
-            </div>
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="0.00" disabled>
-            </div>
+        <div class="form-group">
+            <label for="totalBill">Total Bill with Tip:</label>
+            <input type="text" class="form-control" id="totalBill" [value]="totalBillWithTip | currency" disabled name="totalBill">
         </div>
-
     </form>
 </div>

@@ -1,1 +1,27 @@
-<p>grocery-list works!</p>
+<h1 style="text-align: center; padding-top: 50px;"> Grocery List </h1>
+<div class="container mt-4">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Add an item" [(ngModel)]="newItem" (keydown.enter)="addItem()">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="addItem()">Add</button>
+        </div>
+    </div>
+
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of items; let i = index">
+            <div class="input-group">
+                <input type="text" class="form-control" [(ngModel)]="items[i]" readonly>
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-outline-danger" (click)="deleteItem(i)">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="d-flex justify-content-center mt-3">
+        <button class="btn btn-outline-danger" type="button" (click)="clearItems()">Clear All</button>
+    </div>
+    
+</div>
