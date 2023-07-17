@@ -8,6 +8,7 @@ import { GroceryListComponent } from './grocery-list/grocery-list.component';
 import { RockPaperScissorsComponent } from './rock-paper-scissors/rock-paper-scissors.component';
 import { WeatherDashboardComponent } from './weather-dashboard/weather-dashboard.component';
 import { BannerComponent } from './banner/banner.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BannerComponent } from './banner/banner.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
