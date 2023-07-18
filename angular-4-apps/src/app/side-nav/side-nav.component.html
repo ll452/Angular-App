@@ -1,0 +1,37 @@
+<mat-toolbar color="primary" class="toolbar">
+  <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+  <h1 class="app-name">Angular App</h1>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav #sidenav class="sidenav" mode="over">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/">
+        <mat-icon matListIcon>Dashboard</mat-icon>
+        Home
+      </a>
+      <a mat-list-item routerLink="/tip">
+        <mat-icon matListIcon>restaurant</mat-icon>
+        Tip Calculator
+      </a>
+      <a mat-list-item routerLink="/groceries">
+        <mat-icon matListIcon>local_grocery_store</mat-icon>
+        Grocery List
+      </a>
+      <a mat-list-item routerLink="/rps">
+        <mat-icon matListIcon>videogame_asset</mat-icon>
+        Rock Paper Scissors
+      </a>
+      <a mat-list-item routerLink="/weather">
+        <mat-icon matListIcon>wb_sunny</mat-icon>
+        Weather Dashboard
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+  
+</mat-sidenav-container>

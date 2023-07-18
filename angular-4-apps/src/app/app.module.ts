@@ -9,6 +9,17 @@ import { RockPaperScissorsComponent } from './rock-paper-scissors/rock-paper-sci
 import { WeatherDashboardComponent } from './weather-dashboard/weather-dashboard.component';
 import { BannerComponent } from './banner/banner.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SideNavComponent } from './side-nav/side-nav.component';
+
+// Material Imports
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -17,13 +28,22 @@ import { HttpClientModule } from '@angular/common/http';
     GroceryListComponent,
     RockPaperScissorsComponent,
     WeatherDashboardComponent,
-    BannerComponent
+    BannerComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
