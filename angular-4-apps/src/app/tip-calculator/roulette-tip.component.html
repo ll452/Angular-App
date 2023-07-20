@@ -1,0 +1,27 @@
+<h1 style="text-align: center;">Let's Make Dinner Even More Interesting!</h1>
+<div class="input-fields">
+	<label>Total Bill</label>
+	<input [(ngModel)]="billAmount" type="number">
+	<label>My Tip</label>
+	<input [(ngModel)]="myTip" (ngModelChange)="setMyTip($event)" type="number">
+	<label>Final Tip</label>
+	<input [(ngModel)]="finalTip" type="number">
+</div>
+
+<button id ="spin" (mousedown)="startSpin()" (mouseup)="stopSpin()">Spin</button>
+<span class="arrow"></span>
+
+<div #container class="container">
+	<div class="one">${{myTip}}</div>
+	<div class="two">$100</div>
+	<div class="three">100%</div>
+	<div class="four">15%</div>
+	<div class="five">18%</div>
+	<div class="six">20%</div>
+	<div class="seven">25%</div>
+	<div class="eight">30%</div>
+</div>
+
+<div class="power-bar">
+	<div class="power-bar-fill" [style.width.%]="power"></div>
+</div>

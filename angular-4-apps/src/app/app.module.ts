@@ -7,10 +7,12 @@ import { TipCalculatorComponent } from './tip-calculator/tip-calculator.componen
 import { GroceryListComponent } from './grocery-list/grocery-list.component';
 import { RockPaperScissorsComponent } from './rock-paper-scissors/rock-paper-scissors.component';
 import { WeatherDashboardComponent } from './weather-dashboard/weather-dashboard.component';
-import { BannerComponent } from './banner/banner.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { TabFeatureComponent } from './tip-calculator/tab-feature.component';
+import { ManualBillSplitComponent } from './tip-calculator/manual-bill-split.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Material Imports
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -20,6 +22,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { RouletteTipComponent } from './tip-calculator/roulette-tip.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +36,10 @@ import { MatInputModule } from '@angular/material/input';
     GroceryListComponent,
     RockPaperScissorsComponent,
     WeatherDashboardComponent,
-    BannerComponent,
-    SideNavComponent
+    SideNavComponent,
+    TabFeatureComponent,
+    ManualBillSplitComponent,
+    RouletteTipComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +53,13 @@ import { MatInputModule } from '@angular/material/input';
     MatIconModule,
     MatToolbarModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSliderModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
+    MatTabsModule,
+    MatTableModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

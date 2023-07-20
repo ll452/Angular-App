@@ -1,21 +1,42 @@
 import { Component } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-tip-calculator',
   templateUrl: './tip-calculator.component.html',
-  styleUrls: ['./tip-calculator.component.css']
+  styleUrls: ['./tip-calculator.component.css'],
+  animations: [
+    trigger('fadeInAnimation', [
+        state('in', style({opacity: 1})),
+        transition(':enter', [
+          style({opacity: 0}),
+          animate(600)
+        ]),
+    ])
+  ]
 })
 export class TipCalculatorComponent {
-  billAmount: number =  0; // initial bill amount
-  tipPercentage: number = 0; // initial tip percentage
-  tipAmount: number = 0; // initial tip amount
-  totalBillWithTip: number = 0; // initial total bill
+  billAmount = 0;
+  tipPercentage = 0;
+  tipAmount = 0;
+  totalBillWithTip = 0;
+  numberOfPeople = 1;
+  eachPersonPays = 0;
+  splitBill: boolean = false;
 
-  // This function is called whenever the bill amount or tip percentage changes
-  calculateTip(): void {
-    this.tipAmount = this.billAmount * (this.tipPercentage / 100);
+  calculateTip() {
+    this.tipAmount = (this.billAmount * this.tipPercentage) / 100;
     this.totalBillWithTip = this.billAmount + this.tipAmount;
-    console.log(this.totalBillWithTip);
+    this.eachPersonPays = this.totalBillWithTip / this.numberOfPeople;
   }
-  
+
+  resetValues() {
+    this.billAmount = 0;
+    this.tipPercentage = 0;
+    this.numberOfPeople = 1;
+    this.tipAmount = 0;
+    this.totalBillWithTip = 0;
+    this.eachPersonPays = 0;
+}
+
 }

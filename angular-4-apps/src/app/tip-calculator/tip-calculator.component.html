@@ -1,25 +1,56 @@
-<h1 class="text-center" style="font-size: 50px;">Tip Calculator</h1>
-<div class="container">
-    <form>
-        <div class="form-group">
-            <label for="billAmount">Bill Amount:</label>
-            <input type="number" class="form-control" id="billAmount" [(ngModel)]="billAmount" (input)="calculateTip()" min="0" name="billAmount">
+<div [@fadeInAnimation]="'in'" class="container" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
+    <h1 [@fadeInAnimation]="'in'" mat-typography class="text-center header">Tip Calculator</h1>
+    <form [@fadeInAnimation]="'in'">
+        <div class="top-container">
+            <div class="bill-box">
+                <mat-form-field appearance="outline" class="input-field">
+                    <mat-label>Bill Amount:</mat-label>
+                    <input matInput type="number" id="billAmount" [(ngModel)]="billAmount" (input)="calculateTip()" min="0" name="billAmount">
+                </mat-form-field>
+            </div>
+            <div class="tip-box" fxLayout="row wrap" fxLayoutGap="10px grid">
+                <div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center">
+                    <button mat-raised-button color="primary" (click)="tipPercentage = 10; calculateTip()" fxFlex>10%</button>
+                    <button mat-raised-button color="primary" (click)="tipPercentage = 20; calculateTip()" fxFlex>20%</button>
+                </div>
+                <div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center">
+                    <button mat-raised-button color="primary" (click)="tipPercentage = 15; calculateTip()" fxFlex>15%</button>
+                    <button mat-raised-button color="primary" (click)="tipPercentage = 25; calculateTip()" fxFlex>25%</button>
+                </div>
+                <div fxFlex="100%">
+                    <mat-form-field appearance="outline" class="custom-tip" fxFlex="100%">
+                        <mat-label>Custom Tip (%):</mat-label>
+                        <input matInput type="number" id="customTip" [(ngModel)]="tipPercentage" (input)="calculateTip()" min="0" max="100" name="customTip">
+                    </mat-form-field>
+                </div>
+            </div>       
+            <mat-slide-toggle [(ngModel)]="splitBill" name="splitBill">Split the bill?</mat-slide-toggle>
+            <div class="split-box" *ngIf="splitBill">
+                <mat-form-field appearance="outline" class="input-field">
+                    <mat-label>Number of People:</mat-label>
+                    <input matInput type="number" id="numberOfPeople" [(ngModel)]="numberOfPeople" (input)="calculateTip()" min="1" name="numberOfPeople">
+                </mat-form-field>
+                <button mat-raised-button color="primary" (click)="numberOfPeople = 1; calculateTip()" >1</button>
+                <button mat-raised-button color="primary" (click)="numberOfPeople = 2; calculateTip()" >2</button>
+                <button mat-raised-button color="primary" (click)="numberOfPeople = 3; calculateTip()" >3</button>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="formControlRange">Tip: {{tipPercentage}}%</label>
-            <input type="range" min="0" max="100" class="form-control-range" id="formControlRange" [(ngModel)]="tipPercentage" (input)="calculateTip()" name="tipPercentage" style="width: 100%;">
-        </div>
-
-        <hr>
-        <br>
-        <h5 style="text-align: center; font-size: 30px;"> Results </h5>
-        <div class="form-group">
-            <label for="tipAmount">Tip Amount:</label>
-            <input type="text" class="form-control" id="tipAmount" [value]="tipAmount | currency" disabled name="tipAmount">
-        </div>
-        <div class="form-group">
-            <label for="totalBill">Total Bill with Tip:</label>
-            <input type="text" class="form-control" id="totalBill" [value]="totalBillWithTip | currency" disabled name="totalBill">
-        </div>
+        <mat-divider></mat-divider>
+        <div class="bottom-container">
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Tip Amount:</mat-label>
+                <input matInput type="text" id="tipAmount" [value]="tipAmount | currency" disabled name="tipAmount">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-field">
+                <mat-label>Total Bill with Tip:</mat-label>
+                <input matInput type="text" id="totalBill" [value]="totalBillWithTip | currency" disabled name="totalBill">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-field" *ngIf="splitBill">
+                <mat-label>Each Person Pays:</mat-label>
+                <input matInput type="text" id="eachPersonPays" [value]="eachPersonPays | currency" disabled name="eachPersonPays">
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="warn" (click)="resetValues()" style="width: 80%;">Reset</button>
+        </div>  
     </form>
 </div>
