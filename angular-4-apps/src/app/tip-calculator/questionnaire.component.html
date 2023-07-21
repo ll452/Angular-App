@@ -1,0 +1,28 @@
+<div class="page">
+<div class="container">
+        <div class="animated-image"> 
+          <img src="/assets/images/dollar-bill.jpg" alt="Hi_Five_Ghost">
+        </div>
+        <h2>{{questions[currentQuestion].title}}</h2> 
+      
+        <div class="options">
+          <div class="option-row" *ngFor="let optionRow of getOptionRows(); let i = index">
+            <button *ngFor="let option of optionRow" 
+                    mat-raised-button 
+                    [color]="option === questions[currentQuestion].answer ? 'primary' : 'accent'"
+                    (click)="selectAnswer(option)">
+                    {{option}}
+            </button>
+          </div>
+        </div>
+      
+        <div class="previous-container">
+          <button mat-button 
+                  (click)="prevQuestion()" 
+                  *ngIf="currentQuestion > 0"
+                  class="prev-btn">
+                  Previous
+          </button>
+        </div>
+</div>
+</div>

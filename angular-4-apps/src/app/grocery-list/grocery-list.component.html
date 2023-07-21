@@ -1,27 +1,31 @@
-<h1 style="text-align: center; padding-top: 50px;"> Grocery List </h1>
-<div class="container mt-4">
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Add an item" [(ngModel)]="newItem" (keydown.enter)="addItem()">
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" (click)="addItem()">Add</button>
-        </div>
-    </div>
+<mat-card class="container mt-4">
+    <mat-card-header>
+        <mat-card-title>
+            <h1 class="text-center">Grocery List</h1>
+        </mat-card-title>
+    </mat-card-header>
 
-    <ul class="list-group">
-        <li class="list-group-item" *ngFor="let item of items; let i = index">
-            <div class="input-group">
-                <input type="text" class="form-control" [(ngModel)]="items[i]" readonly>
-                <div class="input-group-append">
-                    <button type="button" class="btn btn-outline-danger" (click)="deleteItem(i)">
-                        <span aria-hidden="true">&times;</span>
+    <mat-card-content>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Add an item" [(ngModel)]="newItem" (keydown.enter)="addItem()">
+            <button mat-icon-button matSuffix aria-label="Add Item" (click)="addItem()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <mat-list>
+            <mat-list-item *ngFor="let item of items; let i = index">
+                <mat-form-field class="full-width">
+                    <input matInput [(ngModel)]="items[i]" readonly>
+                    <button mat-icon-button matSuffix color="warn" aria-label="Delete Item" (click)="deleteItem(i)">
+                        <mat-icon>close</mat-icon>
                     </button>
-                </div>
-            </div>
-        </li>
-    </ul>
+                </mat-form-field>
+            </mat-list-item>
+        </mat-list>
 
-    <div class="d-flex justify-content-center mt-3">
-        <button class="btn btn-outline-danger" type="button" (click)="clearItems()">Clear All</button>
-    </div>
-    
-</div>
+        <div class="text-center mt-3">
+            <button mat-raised-button color="warn" (click)="clearItems()">Clear All</button>
+        </div>
+    </mat-card-content>
+</mat-card>

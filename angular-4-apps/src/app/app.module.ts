@@ -11,8 +11,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { TabFeatureComponent } from './tip-calculator/tab-feature.component';
-import { ManualBillSplitComponent } from './tip-calculator/manual-bill-split.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { QuestionnaireComponent } from './tip-calculator/questionnaire.component';
+import { TipDialogComponent } from './tip-calculator/tip-dialog.component';
+
+
 
 // Material Imports
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -28,6 +32,12 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { RouletteTipComponent } from './tip-calculator/roulette-tip.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -38,8 +48,11 @@ import { RouletteTipComponent } from './tip-calculator/roulette-tip.component';
     WeatherDashboardComponent,
     SideNavComponent,
     TabFeatureComponent,
-    ManualBillSplitComponent,
-    RouletteTipComponent
+    RouletteTipComponent,
+    HomeComponent,
+    QuestionnaireComponent,
+    TipDialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +72,11 @@ import { RouletteTipComponent } from './tip-calculator/roulette-tip.component';
     MatSlideToggleModule,
     MatTabsModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

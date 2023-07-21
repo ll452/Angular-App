@@ -1,17 +1,28 @@
-<div class="container text-center">
-    <h1>Weather Dashboard</h1>
-    <div class="form-group">
-        <input type="text" class="form-control" id="Input" placeholder="Zip Code" [(ngModel)]="zipCode">
-        <label for="Input">Enter a zip code to get the current weather</label>
-    </div>
-    <div class="form-group">
-        <button type="button" class="btn btn-primary mt-3" (click)="getWeather()">Get Weather</button>
-    </div>
-    <hr>
-    <div *ngIf="temperature && conditions">
-        <p>City: {{ city }}</p>
-        <p>Temperature: {{ temperature | number: '1.0-0'}} °F</p>
-        <p>Humidity: {{ humidity }} </p>
-        <p>Conditions: {{ conditions }}</p>
-    </div>
-</div>
+<mat-card class="container text-center">
+    <mat-card-header>
+        <mat-card-title>
+            <h1>Weather Dashboard</h1>
+        </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Zip Code" [(ngModel)]="zipCode">
+            <mat-hint>Enter a zip code to get the current weather</mat-hint>
+        </mat-form-field>
+
+        <div class="form-group">
+            <button mat-raised-button color="primary" class="mt-3" (click)="getWeather()">Get Weather</button>
+        </div>
+        <hr>
+
+        <div *ngIf="temperature && conditions">
+            <mat-list>
+                <mat-list-item>City: {{ city }}</mat-list-item>
+                <mat-list-item>Temperature: {{ temperature | number: '1.0-0'}} °F</mat-list-item>
+                <mat-list-item>Humidity: {{ humidity }}%</mat-list-item>
+                <mat-list-item>Conditions: {{ conditions }}</mat-list-item>
+            </mat-list>
+        </div>
+    </mat-card-content>
+</mat-card>

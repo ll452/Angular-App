@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>My Suggestion</h2>
+
+<style>
+  .tip-image {
+    width: 50px; /* Set your desired width */
+    height: auto; /* Keep aspect ratio */
+  }
+</style>
+
+<div mat-dialog-content>
+  <p *ngIf="data.tip < 5">
+    <img class="tip-image" src="/assets/images/penny.jpg" alt="Penny"> Yikes! Maybe just leave them a penny?
+  </p>
+  <p *ngIf="data.tip >= 5 && data.tip < 10">
+    <img class="tip-image" src="/assets/images/lucky.jpg" alt="Lucky"> They found a four-leaf clover! They got lucky, tip them {{data.tip}}%
+  </p>
+  <p *ngIf="data.tip >= 10">
+    <img class="tip-image" src="/assets/images/big-tip.png" alt="Big Tip"> Wow, big spender! A tip of {{data.tip}}% - I think they'll love you!
+  </p>
+</div>
+
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onRetake()">Retake</button>
+</div>

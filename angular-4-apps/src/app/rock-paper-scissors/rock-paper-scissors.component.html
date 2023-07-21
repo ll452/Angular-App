@@ -1,24 +1,30 @@
-<div class="container text-center">
-    <h1>Rock, Paper, Scissors</h1>
-    <h5>Select either rock, paper, or scissors and see if you can beat the computer!</h5>
-    <h6><b>Remember:</b> "Rock breaks scissors, scissors cut paper, paper covers rock."</h6>
+<mat-card class="container">
+    <mat-card-header>
+        <mat-card-title>
+            <h1>Rock, Paper, Scissors</h1>
+        </mat-card-title>
+        <mat-card-subtitle>
+            <h5>Select either rock, paper, or scissors and see if you can beat the computer!</h5>
+            <h6><b>Remember:</b> "Rock breaks scissors, scissors cut paper, paper covers rock."</h6>
+        </mat-card-subtitle>
+    </mat-card-header>
 
-    <div class="row mt-5">
-        <div class="col">
-            <h3>You: {{ playerMove }}</h3>
-        </div>
-        <div class="col">
-            <h3>Computer: {{ computerMove }}</h3>
-        </div>
-    </div>
+    <mat-card-content>
+        <mat-grid-list cols="2" rowHeight="4:1">
+            <mat-grid-tile>
+                <h3>You: {{ playerMove }}</h3>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <h3>Computer: {{ computerMove }}</h3>
+            </mat-grid-tile>
+        </mat-grid-list>
 
-    <div class="row mt-5">
-        <div class="col">
-            <button class="btn btn-primary" (click)="play('Rock')">Rock</button>
-            <button class="btn btn-primary" (click)="play('Paper')">Paper</button>
-            <button class="btn btn-primary" (click)="play('Scissors')">Scissors</button>
+        <div class="button-container">
+            <button mat-raised-button color="primary" (click)="play('Rock')">Rock</button>
+            <button mat-raised-button color="primary" (click)="play('Paper')">Paper</button>
+            <button mat-raised-button color="primary" (click)="play('Scissors')">Scissors</button>
         </div>
-    </div>
 
-    <h2 class="mt-5" *ngIf="result">{{ result }}</h2>
-</div>
+        <h2 class="result" *ngIf="result">{{ result }}</h2>
+    </mat-card-content>
+</mat-card>
