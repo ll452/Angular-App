@@ -22,7 +22,7 @@ export class QuestionnaireComponent {
   questions = [
     { 
       title: "I Have the Ability to Quickly Determine Your Tip", 
-      options: ["Let's Go"],
+      options: ["Let's Do It"],
       answer: ''
     },
     { 
@@ -51,10 +51,8 @@ export class QuestionnaireComponent {
       answer: ''
     }
   ];
-  
-  
 
-  constructor(public dialog: MatDialog) {} // Inject MatDialog
+  constructor(public dialog: MatDialog) {} 
 
   selectAnswer(answer: string) {
     this.questions[this.currentQuestion].answer = answer;
@@ -84,7 +82,7 @@ export class QuestionnaireComponent {
   }
 
   calculateTip() {
-    let tip = 10;    
+    let tip = 12;    
     this.questions.forEach(question => {
       switch(question.title) {
         case "I Have the Ability to Quickly Determine Your Tip":
@@ -120,8 +118,6 @@ export class QuestionnaireComponent {
           break;
       }
     });
-
-    
 
     // Open the dialog with the calculated tip
     const dialogRef = this.dialog.open(TipDialogComponent, {

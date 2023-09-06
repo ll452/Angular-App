@@ -48,30 +48,30 @@ mat-divider {
 }
 
 mat-form-field {
-    width: 100%; /* Adjust the width as you desire */
-    margin: auto; /* Center the input fields */
+    width: 100%; 
+    margin: auto; 
 }
 
 .input-field {
     margin-bottom: -10px;
     border-radius: 15px;
-    text-align: center; /* Center the text in input fields */
+    text-align: center; 
 }
 
 .input-field input {
     border: none;
-    font-weight: 500; /* Make text a bit bolder */
-    color: #424242; /* Make text darker */
+    font-weight: 500;
+    color: #424242; 
 }
 
 .input-field input:focus {
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Add a focus effect */
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); 
 }
 
 .input-field mat-label {
     color: #757575;
-    font-weight: 500; /* Make label text a bit bolder */
+    font-weight: 500; 
 }
 
 .top-container{

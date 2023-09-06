@@ -51,11 +51,12 @@ h1:hover {
 .result:hover, .input-fields:hover {
 	transform: scale(1.05);
 }
-.result p { /* Basic styling for p tag */
+.result p { 
 	color: #fff;
-	font-size: 1.2em;
+	font-size: 3.5em;
 	text-align: center;
 }
+
 .result {
 	top: 300px;
 	left: 1250px;
@@ -82,9 +83,13 @@ h1:hover {
 
 	
 .result label, .input-fields label {
-	width: 100%;
+    width: 100%;
     margin-top: 10px;
-	color: #ccc;
+    color: #ccc;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.5px;
 }
 
 .result input, .input-fields input {
@@ -128,35 +133,35 @@ h1:hover {
 }
 
 .container .one{
-	background-color: green; /* Red */
+	background-color: green; 
 	left:50%;
 }
 .container .two{
-	background-color: #000000; /* Black */
+	background-color: #000000;
 	transform: rotate(45deg);
 }
 .container .three{
-	background-color: #ff0000; /* Red */
+	background-color: #ff0000; 
 	transform:rotate(90deg);
 }
 .container .four{
-	background-color: #000000; /* Black */
+	background-color: #000000; 
 	transform: rotate(135deg);
 }
 .container .five{
-	background-color: #ff0000; /* Red */
+	background-color: #ff0000; 
 	transform: rotate(180deg);
 }
 .container .six{
-	background-color: #000000; /* Black */
+	background-color: #000000; 
 	transform: rotate(225deg);
 }
 .container .seven{
-	background-color: #ff0000; /* Red */
+	background-color: #ff0000; 
 	transform: rotate(270deg);
 }
 .container .eight{
-	background-color: #000000; /* Black */
+	background-color: #000000; 
 	transform: rotate(315deg);
 }
 
@@ -164,7 +169,7 @@ h1:hover {
 	position: absolute;
 	left:50%;
 	transform: translateX(-50%);
-	color: whitesmoke;  /* Make the arrow green to represent the 0 slot */
+	color: whitesmoke;  
 	z-index: 9999; /* any high number to ensure it's on top */
 }
 

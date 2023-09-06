@@ -1,25 +1,56 @@
-<h2 mat-dialog-title>My Suggestion</h2>
+<h2 mat-dialog-title style="text-align: center; color: #4caf50;">What's the Tip?</h2>
 
 <style>
   .tip-image {
-    width: 50px; /* Set your desired width */
-    height: auto; /* Keep aspect ratio */
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .tip-text {
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 10px;
+    color: #3f51b5; /* Dark blue color */
+  }
+
+  .tip-dialog-content p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .tip-dialog-content {
+    background-color: #f0f0f0; /* Light grey color */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .retake-button {
+    color: #f44336; /* Red color */
+    font-weight: 600;
   }
 </style>
 
-<div mat-dialog-content>
-  <p *ngIf="data.tip < 5">
-    <img class="tip-image" src="/assets/images/penny.jpg" alt="Penny"> Yikes! Maybe just leave them a penny?
+<div mat-dialog-content class="tip-dialog-content">
+  <p *ngIf="data.tip < 5" class="tip-text">
+    Yikes! Sounds like you had a bad time. Maybe just leave them a penny? <img class="tip-image" src="/assets/images/penny.jpg" alt="Penny">
   </p>
-  <p *ngIf="data.tip >= 5 && data.tip < 10">
-    <img class="tip-image" src="/assets/images/lucky.jpg" alt="Lucky"> They found a four-leaf clover! They got lucky, tip them {{data.tip}}%
+  <p *ngIf="data.tip >= 5 && data.tip < 10" class="tip-text">
+    They got lucky this time, tip them {{data.tip}}% <img class="tip-image" src="/assets/images/lucky.jpg" alt="Lucky">
   </p>
-  <p *ngIf="data.tip >= 10">
-    <img class="tip-image" src="/assets/images/big-tip.png" alt="Big Tip"> Wow, big spender! A tip of {{data.tip}}% - I think they'll love you!
+  <p *ngIf="data.tip >= 10 && data.tip < 18" class="tip-text">
+    I think they deserved a {{data.tip}}% tip. <img class="tip-image" src="/assets/images/cash-money.gif" alt="Cash">
+  </p>
+  <p *ngIf="data.tip >= 18" class="tip-text">
+    Wow, big spender! A tip of {{data.tip}}% - I think they'll love you! <img class="tip-image" src="/assets/images/big-tip.png" alt="Big Tip">
   </p>
 </div>
 
-
 <div mat-dialog-actions>
-  <button mat-button (click)="onRetake()">Retake</button>
+  <button mat-button class="retake-button" (click)="onRetake()">Retake</button>
 </div>

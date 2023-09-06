@@ -12,7 +12,7 @@ export class RouletteTipComponent implements OnInit {
   power: number = 0;
 
   // Define the tip values in the same order as the wheel slices
-  tips = [this.myTip, 100, 1, 0.15, 0.18, 0.2, 0.25, 0.3];
+  tips = [this.myTip, 100, 1, 0.10, 0.12, 0.15, 0.18, 0.2];
 
   @ViewChild('container', { static: true }) container!: ElementRef;
   number = Math.ceil(Math.random() * 1000);
@@ -49,7 +49,7 @@ export class RouletteTipComponent implements OnInit {
     // Wait for the CSS transition to finish, then calculate the tip
     setTimeout(() => {
       this.calculateTip();
-    }, 5000); // Assuming the transition duration is 5s
+    }, 5000); // Transition from spin finish for next available spin is 1s
   }
 
   calculateTip() {
@@ -58,11 +58,8 @@ export class RouletteTipComponent implements OnInit {
     let reversedDegrees = (360 - degrees + 22.5) % 360; // Reverse the direction and adjust for the starting point
     let slice = Math.floor(reversedDegrees / 45); // Each slice is 45 degrees
 
-    // Get the tip value for the slice
     let tip = this.tips[slice];
 
-    // If the tip value is less than 1, treat it as a percentage of the bill amount
-    // If the tip value is 100 or greater, treat it as a fixed amount
     if (tip < 1) {
       this.finalTip = this.billAmount * tip ;
     } 

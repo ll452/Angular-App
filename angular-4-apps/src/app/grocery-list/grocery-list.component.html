@@ -13,16 +13,18 @@
             </button>
         </mat-form-field>
 
-        <mat-list>
-            <mat-list-item *ngFor="let item of items; let i = index">
-                <mat-form-field class="full-width">
-                    <input matInput [(ngModel)]="items[i]" readonly>
-                    <button mat-icon-button matSuffix color="warn" aria-label="Delete Item" (click)="deleteItem(i)">
-                        <mat-icon>close</mat-icon>
-                    </button>
-                </mat-form-field>
-            </mat-list-item>
-        </mat-list>
+        <div class="scrollable-list">
+            <mat-list>
+                <mat-list-item *ngFor="let item of items; let i = index">
+                    <mat-form-field class="full-width">
+                        <input matInput [(ngModel)]="items[i]" readonly>
+                        <button mat-icon-button matSuffix color="warn" aria-label="Delete Item" (click)="deleteItem(i)">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </mat-list-item>
+            </mat-list>
+        </div>
 
         <div class="text-center mt-3">
             <button mat-raised-button color="warn" (click)="clearItems()">Clear All</button>

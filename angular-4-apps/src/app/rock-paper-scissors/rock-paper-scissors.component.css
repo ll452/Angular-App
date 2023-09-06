@@ -2,6 +2,30 @@
     height: calc(100vh - (64px));
     margin: auto;
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    padding: 2em;
+    background-color: #fafafa;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+mat-card-title h1 {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+mat-card-subtitle h5 {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 1em;
 }
 
 .button-container {
@@ -10,7 +34,97 @@
     margin-top: 40px;
 }
 
+.button-container button {
+    font-size: 1.1em;
+    padding: 0.5em 2em;
+    transition: all 0.3s;
+}
+
+.button-container button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
 .result {
     margin-top: 40px;
+    color: #f44336;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+mat-grid-list {
+    margin-top: 2em;
+}
+
+mat-grid-tile h3 {
+    font-size: 1.2em;
+    color: #333;
+}
+.container {
+    height: calc(100vh - (64px));
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    padding: 2em;
+    background-color: #fafafa;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+mat-card-title h1 {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+mat-card-subtitle h5 {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 1em;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.button-container button {
+    font-size: 1.1em;
+    padding: 0.5em 2em;
+    transition: all 0.3s;
+}
+
+.button-container button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.result {
+    margin-top: 40px;
+    color: #f44336;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+mat-grid-list {
+    margin-top: 2em;
+}
+
+mat-grid-tile h3 {
+    font-size: 1.2em;
+    color: #333;
+}
+
+img {
+    max-width: 300px;
+
 }
 
